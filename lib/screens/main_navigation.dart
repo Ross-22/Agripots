@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
 import 'explore_screen.dart';
-import 'cart_screen.dart';
 import 'orders_screen.dart';
 import 'profile_screen.dart';
+import 'ai_chatbot_screen.dart';
 
 class MainNavigation extends StatefulWidget {
   const MainNavigation({super.key});
@@ -19,7 +19,7 @@ class _MainNavigationState extends State<MainNavigation> {
   final List<Widget> _screens = [
     const HomeScreen(),
     const ExploreScreen(),
-    const CartScreen(),
+    const AIChatbotScreen(),
     const OrdersScreen(),
     const ProfileScreen(),
   ];
@@ -57,9 +57,9 @@ class _MainNavigationState extends State<MainNavigation> {
             label: 'Explore',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_outlined),
-            activeIcon: Icon(Icons.shopping_cart),
-            label: 'Cart',
+            icon: Icon(Icons.smart_toy_outlined),
+            activeIcon: Icon(Icons.smart_toy),
+            label: 'AI Assistant',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.local_shipping_outlined),

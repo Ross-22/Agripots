@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.agripots"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 34
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -20,14 +20,12 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.agripots"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
+        minSdk = 21
+        targetSdk = 34
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -41,4 +39,23 @@ android {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    // Google Play Services
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
+    implementation("com.google.android.gms:play-services-location:21.2.0")
+    implementation("com.google.android.gms:play-services-base:18.4.0")
+    implementation("com.google.android.gms:play-services-basement:18.4.0")
+    
+    // Maps Utils
+    implementation("com.google.maps.android:maps-utils-ktx:5.0.0")
+    
+    // Multidex support
+    implementation("androidx.multidex:multidex:2.0.1")
+    
+    // Flutter engine
+    implementation("androidx.annotation:annotation:1.8.0")
+    implementation("androidx.lifecycle:lifecycle-common-java8:2.7.0")
 }
